@@ -4,6 +4,7 @@
 #include <time.h>
 #include "lcd.h"
 #include "display.h"
+#include "Brick.h"
 
 #ifdef __GNUC__
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
@@ -57,27 +58,13 @@ uint8_t screen_8_8[8][16][8] = {
 
 uint8_t screen[16][8] = 
 {
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0,
-	1,0,1,0,1,0,1,0
+	0
 };
 
 
 uint8_t tamperButton, keyButton, wakeupButton, upButton, downButton, leftButton, rightButton, selButton;
 uint8_t R_button,L_button,U_button,SAVE_button,PUT_button;
+uint8_t x,y=0;
 //===========================================================================//
 //            						     main                       			     			   //
 //===========================================================================//
@@ -109,6 +96,21 @@ int main(void)
   while (1)
   {
 		LCD_Display(&screen[0]);
+		for(int i=0;i<4;i++)
+		{
+			for(int j=0;j<4;j++)
+			{
+				if(I[1][i][j]==1)
+				{
+					
+					screen[i+x][j+y]=1;
+				}
+				
+			}
+			
+			
+		}
+		
   }
 }
 
@@ -128,23 +130,29 @@ void TIM8_UP_IRQHandler(void)
 {
 	if((R_button == 1)&&(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9) == 0))
 	{
-		 LCD_DrawString (0,0,&R,1);
+		LCD_Clear();
+		 //LCD_DrawString (0,0,&R,1);
+		x++;
 	}
 	if((U_button == 1)&&(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_8) == 0))
 	{
-		LCD_DrawString (0,0,&U,1);
+		LCD_Clear();
+		//LCD_DrawString (0,0,&U,1);
+		y++;
 	}
 	if((L_button == 1)&&(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_12) == 0))
 	{
-		LCD_DrawString (0,0,&L,1);
+		//LCD_DrawString (0,0,&L,1);
+		x=0;
 	}
 	if((PUT_button == 1)&&(HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2) == 0))
 	{
-		LCD_DrawString (0,0,&P,1);
+		//LCD_DrawString (0,0,&P,1);
+		y=0;
 	}
 	if((SAVE_button == 1)&&(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_11) == 0))
 	{
-		LCD_DrawString (0,0,&S,1);
+		//LCD_DrawString (0,0,&S,1);
 	}
 	
 	

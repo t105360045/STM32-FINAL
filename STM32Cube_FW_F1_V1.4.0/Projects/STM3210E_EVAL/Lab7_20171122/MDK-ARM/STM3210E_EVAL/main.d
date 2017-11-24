@@ -61,3 +61,4 @@ stm3210e_eval\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 stm3210e_eval\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 stm3210e_eval\main.o: ../Inc/lcd.h
 stm3210e_eval\main.o: ../Inc/display.h
+stm3210e_eval\main.o: ../Inc/Brick.h
