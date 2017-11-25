@@ -12,7 +12,7 @@ void LCD_Display(uint8_t screen[][8])
 	{
 		for(j = 0;j < 16;j++)
 		{
-			//if(oldscreen[j][i] != screen[j][i])
+			if(oldscreen[j][i] != screen[j][i])
 			{
 				k = 8;
 				unsigned char coll = ((15 - j) * 8) & 0x0f;
@@ -24,14 +24,36 @@ void LCD_Display(uint8_t screen[][8])
 				LCD_Command = Set_ColL_Addr_X|coll;   delay();
 				while (k--)
 				{
+					uint8_t temp = 0;
+					if((k == 0)||(k == 1))
+					{
+						temp = 0xc3;
+						if((screen[j][i] != screen[j + 1][i])||(j == 15))
+						{
+							temp += 0x3c;
+						}
+					}
 					if((k == 2)||(k == 3)||(k == 4)||(k == 5))
 					{
-						LCD_Data = (screen[j][i] * 0xc3);
+						temp = 0x00;
+						if((screen[j][i] != screen[j][i - 1])||(i == 0))
+						{
+							temp += 0xc0;
+						}
+						if((screen[j][i] != screen[j][i + 1])||(i == 7))
+						{
+							temp += 0x03;
+						}
 					}
-					else
+					if((k == 6)||(k == 7))
 					{
-						LCD_Data = (screen[j][i] * 0xff);
+						temp = 0xc3;
+						if((screen[j][i] != screen[j - 1][i])||(j == 0))
+						{
+							temp += 0x3c;
+						}
 					}
+					LCD_Data = (screen[j][i] * temp);
 					delay();
 				}
 				oldscreen[j][i] = screen[j][i];
