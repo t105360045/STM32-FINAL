@@ -28,7 +28,7 @@ void LCD_Display(uint8_t screen[][8])
 					if((k == 0)||(k == 1))
 					{
 						temp = 0xc3;
-						if((point[j][i] != point[j + 1][i])||(j == 15))
+						if((screen[j][i] != screen[j - 1][i])||(j == 15))
 						{
 							temp += 0x3c;
 						}
@@ -36,11 +36,11 @@ void LCD_Display(uint8_t screen[][8])
 					if((k == 2)||(k == 3)||(k == 4)||(k == 5))
 					{
 						temp = 0x00;
-						if((point[j][i] != point[j][i - 1])||(i == 0))
+						if((screen[j][i] != screen[j][i - 1])||(i == 0))
 						{
 							temp += 0xc0;
 						}
-						if((point[j][i] != point[j][i + 1])||(i == 7))
+						if((screen[j][i] != screen[j][i + 1])||(i == 7))
 						{
 							temp += 0x03;
 						}
@@ -48,12 +48,12 @@ void LCD_Display(uint8_t screen[][8])
 					if((k == 6)||(k == 7))
 					{
 						temp = 0xc3;
-						if((point[j][i] != point[j - 1][i])||(j == 0))
+						if((screen[j][i] != screen[j + 1][i])||(j == 0))
 						{
 							temp += 0x3c;
 						}
 					}
-					LCD_Data = (point[j][i] * temp);
+					LCD_Data = (screen[j][i] * temp);
 					delay();
 				}
 				oldscreen[j][i] = screen[j][i];
