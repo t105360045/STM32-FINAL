@@ -28,7 +28,7 @@ void LCD_Display(uint8_t screen[][8])
 					if((k == 0)||(k == 1))
 					{
 						temp = 0xc3;
-						if((screen[j][i] != screen[j + 1][i])||(j == 15))
+						if((screen[j][i] != screen[j - 1][i])||(j == 15))
 						{
 							temp += 0x3c;
 						}
@@ -48,7 +48,7 @@ void LCD_Display(uint8_t screen[][8])
 					if((k == 6)||(k == 7))
 					{
 						temp = 0xc3;
-						if((screen[j][i] != screen[j - 1][i])||(j == 0))
+						if((screen[j][i] != screen[j + 1][i])||(j == 0))
 						{
 							temp += 0x3c;
 						}
