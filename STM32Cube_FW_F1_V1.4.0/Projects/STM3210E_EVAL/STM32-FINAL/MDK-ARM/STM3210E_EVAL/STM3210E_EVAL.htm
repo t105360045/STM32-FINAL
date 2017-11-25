@@ -3,11 +3,11 @@
 <title>Static Call Graph - [STM3210E_EVAL\STM3210E_EVAL.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM3210E_EVAL\STM3210E_EVAL.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat Nov 25 02:58:40 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat Nov 25 15:53:08 2017
 <BR><P>
 <H3>Maximum Stack Usage =        168 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-main &rArr; LCD_Init &rArr; STM3210E_LCD_Init &rArr; LCD_FSMCConfig &rArr; HAL_SRAM_Init &rArr; FSMC_NORSRAM_Timing_Init
+TIM8_UP_TIM13_IRQHandler &rArr; LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
 <P>
 <H3>
 Mutually Recursive functions
@@ -386,7 +386,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[4f]"></a>Draw</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, main.o(i.Draw))
-<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = Draw &rArr; LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Draw &rArr; LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawString
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ASCIItoLCD
@@ -760,8 +760,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_IRQHandler
 </UL>
 
-<P><STRONG><a name="[86]"></a>LCD_Clear</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, lcd.o(i.LCD_Clear))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = LCD_Clear &rArr; delay
+<P><STRONG><a name="[86]"></a>LCD_Clear</STRONG> (Thumb, 92 bytes, Stack size 12 bytes, lcd.o(i.LCD_Clear))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = LCD_Clear &rArr; delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
 </UL>
@@ -770,8 +770,8 @@ Global Symbols
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[88]"></a>LCD_CtrlLinesConfig</STRONG> (Thumb, 268 bytes, Stack size 56 bytes, lcd.o(i.LCD_CtrlLinesConfig))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = LCD_CtrlLinesConfig &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[88]"></a>LCD_CtrlLinesConfig</STRONG> (Thumb, 354 bytes, Stack size 24 bytes, lcd.o(i.LCD_CtrlLinesConfig))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD_CtrlLinesConfig &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_DeInit
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -779,7 +779,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STM3210E_LCD_Init
 </UL>
 
-<P><STRONG><a name="[8a]"></a>LCD_Display</STRONG> (Thumb, 172 bytes, Stack size 40 bytes, main.o(i.LCD_Display))
+<P><STRONG><a name="[8a]"></a>LCD_Display</STRONG> (Thumb, 236 bytes, Stack size 40 bytes, main.o(i.LCD_Display))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD_Display &rArr; delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
@@ -787,16 +787,16 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8b]"></a>LCD_DrawChar</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, lcd.o(i.LCD_DrawChar))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = LCD_DrawChar &rArr; delay
+<P><STRONG><a name="[8b]"></a>LCD_DrawChar</STRONG> (Thumb, 182 bytes, Stack size 28 bytes, lcd.o(i.LCD_DrawChar))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = LCD_DrawChar &rArr; delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawString
 </UL>
 
-<P><STRONG><a name="[51]"></a>LCD_DrawString</STRONG> (Thumb, 50 bytes, Stack size 20 bytes, lcd.o(i.LCD_DrawString))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
+<P><STRONG><a name="[51]"></a>LCD_DrawString</STRONG> (Thumb, 70 bytes, Stack size 28 bytes, lcd.o(i.LCD_DrawString))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawChar
 </UL>
@@ -804,15 +804,15 @@ Global Symbols
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Draw
 </UL>
 
-<P><STRONG><a name="[8c]"></a>LCD_Draw_ST_Logo</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, lcd.o(i.LCD_Draw_ST_Logo))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = LCD_Draw_ST_Logo &rArr; delay
+<P><STRONG><a name="[8c]"></a>LCD_Draw_ST_Logo</STRONG> (Thumb, 100 bytes, Stack size 12 bytes, lcd.o(i.LCD_Draw_ST_Logo))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = LCD_Draw_ST_Logo &rArr; delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
 
-<P><STRONG><a name="[8d]"></a>LCD_FSMCConfig</STRONG> (Thumb, 90 bytes, Stack size 104 bytes, lcd.o(i.LCD_FSMCConfig))
+<P><STRONG><a name="[8d]"></a>LCD_FSMCConfig</STRONG> (Thumb, 100 bytes, Stack size 104 bytes, lcd.o(i.LCD_FSMCConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = LCD_FSMCConfig &rArr; HAL_SRAM_Init &rArr; FSMC_NORSRAM_Timing_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SRAM_Init
@@ -820,7 +820,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STM3210E_LCD_Init
 </UL>
 
-<P><STRONG><a name="[8e]"></a>LCD_Init</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, lcd.o(i.LCD_Init))
+<P><STRONG><a name="[8e]"></a>LCD_Init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, lcd.o(i.LCD_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = LCD_Init &rArr; STM3210E_LCD_Init &rArr; LCD_FSMCConfig &rArr; HAL_SRAM_Init &rArr; FSMC_NORSRAM_Timing_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STM3210E_LCD_Init
@@ -829,7 +829,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8f]"></a>STM3210E_LCD_Init</STRONG> (Thumb, 154 bytes, Stack size 8 bytes, lcd.o(i.STM3210E_LCD_Init))
+<P><STRONG><a name="[8f]"></a>STM3210E_LCD_Init</STRONG> (Thumb, 212 bytes, Stack size 8 bytes, lcd.o(i.STM3210E_LCD_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = STM3210E_LCD_Init &rArr; LCD_FSMCConfig &rArr; HAL_SRAM_Init &rArr; FSMC_NORSRAM_Timing_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_delay
@@ -873,7 +873,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xg.o(RESET)
 </UL>
 <P><STRONG><a name="[36]"></a>TIM8_UP_TIM13_IRQHandler</STRONG> (Thumb, 546 bytes, Stack size 104 bytes, main.o(i.TIM8_UP_TIM13_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 156<LI>Call Chain = TIM8_UP_TIM13_IRQHandler &rArr; LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = TIM8_UP_TIM13_IRQHandler &rArr; LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawString
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
@@ -888,7 +888,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2f]"></a>USART1_IRQHandler</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, main.o(i.USART1_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = USART1_IRQHandler &rArr; Draw &rArr; LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = USART1_IRQHandler &rArr; Draw &rArr; LCD_DrawString &rArr; LCD_DrawChar &rArr; delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive
@@ -916,7 +916,7 @@ Global Symbols
 
 <P><STRONG><a name="[b3]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[87]"></a>delay</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lcd.o(i.delay))
+<P><STRONG><a name="[87]"></a>delay</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd.o(i.delay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STM3210E_LCD_Init
@@ -955,7 +955,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[99]"></a>power_delay</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, lcd.o(i.power_delay))
+<P><STRONG><a name="[99]"></a>power_delay</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, lcd.o(i.power_delay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = power_delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STM3210E_LCD_Init
@@ -969,7 +969,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[98]"></a>reset_delay</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, lcd.o(i.reset_delay))
+<P><STRONG><a name="[98]"></a>reset_delay</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, lcd.o(i.reset_delay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = reset_delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STM3210E_LCD_Init
