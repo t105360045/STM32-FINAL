@@ -56,3 +56,8 @@ void LCD_Display(uint8_t point[][8])
 		}
 	}
 }
+
+void test2()
+{
+	delay();
+}
