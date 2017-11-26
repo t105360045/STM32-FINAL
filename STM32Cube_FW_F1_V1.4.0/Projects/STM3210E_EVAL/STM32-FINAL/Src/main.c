@@ -4,7 +4,10 @@
 #include "lcd.h"
 #include "display.h"
 #include "Brick.h"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 20171127_0028
 #ifdef __GNUC__
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #else
