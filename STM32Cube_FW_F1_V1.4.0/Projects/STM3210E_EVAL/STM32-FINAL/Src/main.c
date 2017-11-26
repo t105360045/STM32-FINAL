@@ -4,6 +4,7 @@
 #include "lcd.h"
 #include "display.h"
 #include "Brick.h"
+
 #ifdef __GNUC__
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #else
@@ -30,16 +31,9 @@ void printffff(uint8_t *string);
 void LCD_FullDrew_8_16(uint8_t *string);
 void LCD_FullDrew_8_8(uint8_t *string);
 void new_brick();
+
 uint8_t UARTBuffer[100];
 uint8_t UARTCount = 0;
-uint8_t screen[16][8] = 
-{
-	0
-};
- uint8_t screeewfen[16][8] = 
-{
-	0
-};
 
 uint8_t tamperButton, keyButton, wakeupButton, upButton, downButton, leftButton, rightButton, selButton;
 uint8_t R_button,L_button,U_button,SAVE_button,PUT_button;
@@ -47,6 +41,11 @@ int8_t type,angle,x,y,save_type=0;
 uint8_t delay_flag = 0;
 int8_t temp_type=0;
 uint8_t save_f=0;
+
+uint8_t screen[16][8] = 
+{
+	0
+};
 //===========================================================================//
 //            						     main                       			     			   //
 //===========================================================================//
@@ -75,8 +74,6 @@ int main(void)
 	HAL_ADC_Stop(&hadc1);
 	
 	srand(adc);
-	//LCD_FullDrew_8_16(screen_8_16[0][0]);
-	//LCD_FullDrew_8_8(screen_8_8[0][0]);
 	
   HAL_TIM_Base_Start_IT(&htim1);
 	HAL_TIM_Base_Start_IT(&htim8);
@@ -99,10 +96,12 @@ int main(void)
 //==========================================================================//
 void TIM1_UP_IRQHandler(void)
 {
-
 	clean_old(&brick[type][angle][0],&screen[0],x,y);
+	
 	if(canPut(&brick[type][angle][0],&screen[0],x,y+1)==0)
+	{
 		y=y+1;
+	}
 	else if(canPut(&brick[type][angle][0],&screen[0],x,y+1)==3)
 	{
 		new_brick();	
@@ -111,10 +110,11 @@ void TIM1_UP_IRQHandler(void)
 	{
 		new_brick();
 	}
-		
-
+	
 	set_new(&brick[type][angle][0],&screen[0],x,y);	
+	
 	HAL_GPIO_TogglePin(LED1_GPIO_PORT,LED1_PIN);
+	
   HAL_TIM_IRQHandler(&htim1);
 }
 
@@ -123,7 +123,6 @@ void TIM1_UP_IRQHandler(void)
 //==========================================================================//
 void TIM8_UP_IRQHandler(void)
 {
-	
 	HAL_TIM_Base_Stop_IT(&htim1);
 //=======================================================================R
 	if((R_button == 1)&&(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9) == 0))
@@ -143,7 +142,6 @@ void TIM8_UP_IRQHandler(void)
 			x--;
 		}
 	}			
-		
 //=======================================================================PUT
 	if((PUT_button == 1)&&(HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2) == 0))
 	{
@@ -161,22 +159,20 @@ void TIM8_UP_IRQHandler(void)
 		{
 			clean_old(&brick[type][angle][0],&screen[0],x,y);
 		
-		if(save_type==-1)		
-		{
-			save_type =type ;
-			x=2;y=-1;angle=0;
-			type=rand()%7;
+			if(save_type==-1)		
+			{
+				save_type =type ;
+				x=2;y=-1;angle=0;
+				type=rand()%7;
+			}
+			else
+			{
+				temp_type=type;
+				x=2;y=-1;angle=0;
+				type=save_type;
+				save_type=temp_type;
+			}
 		}
-		else
-		{
-			temp_type=type;
-			x=2;y=-1;angle=0;
-			type=save_type;
-			save_type=temp_type;
-			
-		}
-	}
-		
 		save_f=1;
 	}
 //=======================================================================U
@@ -237,7 +233,6 @@ void TIM8_UP_IRQHandler(void)
 			}
 		}	
 	}
-	
 //=======================================================================Tamper
 	if((tamperButton == 1)&&(HAL_GPIO_ReadPin(TAMPER_BUTTON_GPIO_PORT, TAMPER_BUTTON_PIN) == 0))
 	{
@@ -261,7 +256,6 @@ void TIM8_UP_IRQHandler(void)
 		 
   HAL_TIM_IRQHandler(&htim8);
 	HAL_TIM_Base_Start_IT(&htim1);
-	HAL_GPIO_WritePin(LED1_GPIO_PORT,LED2_PIN,0);
 }
 //==========================================================================//
 //            						     USART1_IRQHandler                      	  	//
@@ -282,7 +276,6 @@ void USART1_IRQHandler(void)
 	{
 		UARTBuffer[UARTCount] = 0x00;
 		
-		//
 		printffff(UARTBuffer);
 		LCD_Clear();
 		Draw(UARTBuffer);
@@ -294,7 +287,7 @@ void USART1_IRQHandler(void)
 }
 
 //==========================================================================//
-//            						     clean_line                      	  	//
+//            						     new_brick                      	  	//
 //==========================================================================//
 void new_brick()
 {
@@ -333,17 +326,8 @@ void new_brick()
 		for(int ii = 0; ii <16; ii ++)
 			for(int jj = 0; jj < 8; jj ++)
 				screen[ii][jj]=0;
-	
-	
 }
-//==========================================================================//
-//==========================================================================//
-//==========================================================================//
-//==========================================================================//
-//==========================================================================//
-//==========================================================================//
-//==========================================================================//
-//==========================================================================//
+
 //==========================================================================//
 //==========================================================================//
 //==========================================================================//

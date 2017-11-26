@@ -96,29 +96,25 @@ compiling main.c...
   #define SCB_CFSR_DIVBYZERO_Pos              (25U)                              
 ../../../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xg.h(3486): warning:  #47-D: incompatible redefinition of macro "SCB_CFSR_DIVBYZERO_Msk"  (declared at line 597 of "S:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm3.h")
   #define SCB_CFSR_DIVBYZERO_Msk              (0x1U << SCB_CFSR_DIVBYZERO_Pos)   /*!< 0x02000000 */
-../Inc/display.h(131): warning:  #1-D: last line of file ends without a newline
+../Inc/display.h(127): warning:  #1-D: last line of file ends without a newline
   }
-../Src/main.c(32): warning:  #1295-D: Deprecated declaration new_brick - give arg types
+../Src/main.c(33): warning:  #1295-D: Deprecated declaration new_brick - give arg types
   void new_brick();
-../Src/main.c(264): warning:  #188-D: enumerated type mixed with another type
-  	HAL_GPIO_WritePin(
-ED1_GPIO_PORT,
-ED2_PIN,0);
-../Src/main.c(410): warning:  #188-D: enumerated type mixed with another type
+../Src/main.c(394): warning:  #188-D: enumerated type mixed with another type
   	HAL_GPIO_WritePin(
 PIOC, 
 PIO_PIN_10,0);
-../Src/main.c(448): warning:  #188-D: enumerated type mixed with another type
+../Src/main.c(432): warning:  #188-D: enumerated type mixed with another type
   	HAL_GPIO_WritePin(
 ED4_GPIO_PORT, 
 ED1_PIN|
 ED2_PIN|
 ED3_PIN|
 ED4_PIN,0);
-../Src/main.c: 39 warnings, 0 errors
+../Src/main.c: 38 warnings, 0 errors
 linking...
-Program Size: Code=13148 RO-data=360 RW-data=3620 ZI-data=1484  
-"STM3210E_EVAL\STM3210E_EVAL.axf" - 0 Error(s), 39 Warning(s).
+Program Size: Code=13136 RO-data=360 RW-data=3620 ZI-data=1484  
+"STM3210E_EVAL\STM3210E_EVAL.axf" - 0 Error(s), 38 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -141,7 +137,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:04
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

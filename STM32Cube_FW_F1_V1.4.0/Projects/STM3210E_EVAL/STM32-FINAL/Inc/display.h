@@ -1,9 +1,5 @@
 #include "lcd.h"
 
-uint8_t oldscreen[16][8] = 
-{
-	0
-};
 uint8_t specialNum = 1;
 void LCD_Display(uint8_t screen[][8])
 {
@@ -33,7 +29,7 @@ void LCD_Display(uint8_t screen[][8])
 					}
 				}
 				if((k == 2)||(k == 3)||(k == 4)||(k == 5))
-			{
+				{
 					temp = 0x00;
 					if((screen[j][i] != screen[j][i + 1])||(i == 7))
 					{
