@@ -58,7 +58,6 @@ stm3210e_eval\main.o: ../../../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal
 stm3210e_eval\main.o: ../Inc/main.h
 stm3210e_eval\main.o: ../../../../Drivers/BSP/STM3210E_EVAL/stm3210e_eval.h
 stm3210e_eval\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-stm3210e_eval\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 stm3210e_eval\main.o: ../Inc/lcd.h
 stm3210e_eval\main.o: ../Inc/display.h
 stm3210e_eval\main.o: ../Inc/Brick.h

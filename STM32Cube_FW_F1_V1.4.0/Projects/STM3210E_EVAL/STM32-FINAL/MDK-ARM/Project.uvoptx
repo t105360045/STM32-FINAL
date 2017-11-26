@@ -88,7 +88,7 @@
         <sRmem>1</sRmem>
         <sRfunc>1</sRfunc>
         <sRbox>1</sRbox>
-        <tLdApp>1</tLdApp>
+        <tLdApp>0</tLdApp>
         <tGomain>1</tGomain>
         <tRbreak>1</tRbreak>
         <tRwatch>1</tRwatch>
@@ -143,27 +143,10 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>ST-LINKIII-KEIL_SWO</Key>
-          <Name>-U-O142 -O2254 -SF4000 -C0 -A0 -I0 -HNlocalhost -HP7184 -P2 -N00("ARM CoreSight SW-DP") -D00(1BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F10x_1024.FLM -FS08000000 -FL0100000 -FP0($$Device:STM32F103ZG$Flash\STM32F10x_1024.FLM)</Name>
+          <Name>-UST-Link/V1_on_F: -O206 -SF4000 -C0 -A0 -I0 -HNlocalhost -HP7184 -P2 -N00("ARM CoreSight SW-DP") -D00(1BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F10x_1024.FLM -FS08000000 -FL0100000 -FP0($$Device:STM32F103ZG$Flash\STM32F10x_1024.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>178</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134226396</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Src/main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\STM3210E_EVAL\../Src/main.c\178</Expression>
-        </Bp>
-      </Breakpoint>
+      <Breakpoint/>
       <WatchWindow1>
         <Ww>
           <count>0</count>
@@ -179,6 +162,11 @@
           <count>2</count>
           <WinNumber>1</WinNumber>
           <ItemText>dutyCount</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>y</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
