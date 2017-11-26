@@ -29,11 +29,7 @@ void LCD_Display(uint8_t screen[][8])
 					}
 				}
 				if((k == 2)||(k == 3)||(k == 4)||(k == 5))
-<<<<<<< HEAD
 				{
-=======
-			{
->>>>>>> 20171127_0051
 					temp = 0x00;
 					if((screen[j][i] != screen[j][i + 1])||(i == 7))
 					{

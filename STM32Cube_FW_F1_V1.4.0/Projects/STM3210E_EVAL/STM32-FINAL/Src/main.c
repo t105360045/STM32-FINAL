@@ -4,10 +4,7 @@
 #include "lcd.h"
 #include "display.h"
 #include "Brick.h"
-<<<<<<< HEAD
 
-=======
->>>>>>> 20171127_0028
 #ifdef __GNUC__
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #else
@@ -44,6 +41,7 @@ int8_t type,angle,x,y,save_type=0;
 uint8_t delay_flag = 0;
 int8_t temp_type=0;
 uint8_t save_f=0;
+uint8_t score = 0;
 
 uint8_t screen[16][8] = 
 {
