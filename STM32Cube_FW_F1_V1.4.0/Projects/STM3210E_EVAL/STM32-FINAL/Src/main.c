@@ -49,7 +49,10 @@ uint8_t screen[16][8] =
 {
 	0
 };
- 
+ uint8_t screeewfen[16][8] = 
+{
+	0
+};
 
 uint8_t tamperButton, keyButton, wakeupButton, upButton, downButton, leftButton, rightButton, selButton;
 uint8_t R_button,L_button,U_button,SAVE_button,PUT_button;
