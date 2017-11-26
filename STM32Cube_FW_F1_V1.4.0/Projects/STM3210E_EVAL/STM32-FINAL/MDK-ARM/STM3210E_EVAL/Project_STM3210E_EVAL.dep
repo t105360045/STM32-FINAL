@@ -56,10 +56,14 @@ I (../../../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5A19306C)
 I (../../../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5A19306C)
 I (../../../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_hcd.h)(0x5A19306C)
 <<<<<<< HEAD
+<<<<<<< HEAD
 F (../Src/main.c)(0x5A1AF387)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../../../../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../../../../Drivers/STM32F1xx_HAL_Driver/Inc -I ../../../../Drivers/BSP/STM3210E_EVAL -I ../../../../Drivers/BSP/Components/Common -I ../../../../Utilities/Log -I ../../../../Utilities/CPU --C99-I.\RTE\_STM3210E_EVAL-IS:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IS:\software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_XL -DUSE_HAL_DRIVER -DSTM32F103xG -DUSE_STM3210E_EVAL-o stm3210e_eval\main.o --omf_browse stm3210e_eval\main.crf --depend stm3210e_eval\main.d)
 =======
 F (../Src/main.c)(0x5A1AE4DE)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../../../../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../../../../Drivers/STM32F1xx_HAL_Driver/Inc -I ../../../../Drivers/BSP/STM3210E_EVAL -I ../../../../Drivers/BSP/Components/Common -I ../../../../Utilities/Log -I ../../../../Utilities/CPU --C99-I.\RTE\_STM3210E_EVAL-IS:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IS:\software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_XL -DUSE_HAL_DRIVER -DSTM32F103xG -DUSE_STM3210E_EVAL-o stm3210e_eval\main.o --omf_browse stm3210e_eval\main.crf --depend stm3210e_eval\main.d)
 >>>>>>> 20171127_0011
+=======
+F (../Src/main.c)(0x5A1AEB94)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../../../../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../../../../Drivers/STM32F1xx_HAL_Driver/Inc -I ../../../../Drivers/BSP/STM3210E_EVAL -I ../../../../Drivers/BSP/Components/Common -I ../../../../Utilities/Log -I ../../../../Utilities/CPU --C99-I.\RTE\_STM3210E_EVAL-IS:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IS:\software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_XL -DUSE_HAL_DRIVER -DSTM32F103xG -DUSE_STM3210E_EVAL-o stm3210e_eval\main.o --omf_browse stm3210e_eval\main.crf --depend stm3210e_eval\main.d)
+>>>>>>> 20171127_0034
 I (../../../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5A19306C)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5A1AE4DD)
 I (../../../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5A19306C)
