@@ -581,17 +581,17 @@ ARM Macro Assembler    Page 9
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=stm3210e_eval\startup_stm32f103xg.d -ostm3210e_eval\startup_stm32f
-103xg.o -I.\RTE\_STM3210E_EVAL -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Incl
-ude -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include --predefine="
+103xg.o -I.\RTE\_STM3210E_EVAL -IS:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\C
+MSIS\Include -IS:\software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Inc
 
 
 
 ARM Macro Assembler    Page 10 
 
 
-__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION S
-ETA 524" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_XL SETA 1" --list=st
-artup_stm32f103xg.lst startup_stm32f103xg.s
+lude --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 524" -
+-predefine="_RTE_ SETA 1" --predefine="STM32F10X_XL SETA 1" --list=startup_stm3
+2f103xg.lst startup_stm32f103xg.s
 
 
 
@@ -1463,4 +1463,4 @@ Symbol: __main
       At line 168 in file startup_stm32f103xg.s
 Comment: __main used once
 2 symbols
-424 symbols in table
+423 symbols in table

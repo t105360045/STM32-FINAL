@@ -288,11 +288,10 @@ void USART1_IRQHandler(void)
 }
 
 //==========================================================================//
-//            						     new_brick                      	  	//
+//            						     new_brick                              	  	//
 //==========================================================================//
 void new_brick()
 {
-	
 	save_f=0;
 	set_new(&brick[type][angle][0],&screen[0],x,y);	
 	x=2;y=-1;angle=0;
@@ -387,8 +386,6 @@ void SystemClock_Config(void)
 //==========================================================================//
 void MX_GPIO_Init(void)
 {
-
- /* GPIO Ports Clock Enable */ 
   __GPIOA_CLK_ENABLE();
 	__GPIOC_CLK_ENABLE();
 	__GPIOD_CLK_ENABLE();
@@ -411,7 +408,6 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 	GPIO_InitStruct.Pin = GPIO_PIN_2;
 	HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
 }
 
 //==========================================================================//
@@ -617,7 +613,6 @@ void MX_TIM8_Init(uint32_t Frequence)
 //==========================================================================//
 void MX_ADC1_Init(void)
 {
-
   ADC_ChannelConfTypeDef sConfig;
 
   hadc1.Instance = ADC1;
@@ -633,7 +628,6 @@ void MX_ADC1_Init(void)
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-
 }
 
 //==========================================================================//
