@@ -292,10 +292,21 @@ void USART1_IRQHandler(void)
 //==========================================================================//
 void new_brick()
 {
+	
 	save_f=0;
 	set_new(&brick[type][angle][0],&screen[0],x,y);	
 	x=2;y=-1;angle=0;
-	type=rand()%7;
+	while(1)
+	{
+		uint8_t temp;
+		temp=rand()%7;
+		if(type!=temp)
+		{
+			type=temp;
+			break;
+		}
+	}
+	
 	for(int i = 0; i < 16; i ++)
 	{	
 		for(int j = 0; j < 8; j ++)
