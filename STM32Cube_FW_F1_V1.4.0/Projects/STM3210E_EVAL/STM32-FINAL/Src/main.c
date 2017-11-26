@@ -320,6 +320,7 @@ void new_brick()
 					screen[0][jj]=0;
 				}
 				delay_flag = 1;
+				score += 10;
 			}
 		}
 	}
